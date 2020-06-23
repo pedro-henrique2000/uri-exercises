@@ -17,7 +17,7 @@ public class Uri1044 {
 		if (isMultiple) {
 			System.out.println("Sao Multiplos");
 		} else {
-			System.out.println("Nao sao Multiplos");
+			System.out.println("Nao sao Muultiplos");
 		}
 
 		sc.close();
