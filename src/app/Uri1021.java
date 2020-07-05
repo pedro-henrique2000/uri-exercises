@@ -8,42 +8,76 @@ public class Uri1021 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
+
 		double value = sc.nextDouble();
-		int value1 = (int) value;
-		double decimalPart = value - value1;
-		int coins = 0;
-		System.out.println("NOTAS:");
-		System.out.println(value1 / 100 + " nota(s) de R$ 100.00");
-		value1 %= 100;
-		System.out.println(value1 / 50 + " nota(s) de R$ 50.00");
-		value1 %= 50;
-		System.out.println(value1 / 20 + " nota(s) de R$ 20.00");
-		value1 %= 20;
-		System.out.println(value1 / 10 + " nota(s) de R$ 10.00");
-		value1 %= 10;
-		System.out.println(value1 / 5 + " nota(s) de R$ 5.00");
-		value1 %= 5;
-		System.out.println(value1 / 2 + " nota(s) de R$ 2.00");
-		value1 %= 2;
-		
-		
-		System.out.println("MOEDAS: ");
-		int moedaUm = value1 == 1 ? 1 : 0;
-		System.out.println(moedaUm + " moeda(s) de R$ 1.00");
-		coins = (int) (decimalPart / 0.5);
-		System.out.printf("%d moeda(s) de R$ 0.50%n", coins);
-		decimalPart %= 0.5;
-		coins = (int) (decimalPart / 0.25);
-		System.out.printf("%d moeda(s) de R$ 0.25%n", coins);
-		decimalPart %= 0.25;
-		coins = (int) (decimalPart / 0.10);
-		System.out.printf("%d moeda(s) de R$ 0.10%n", coins);
-		decimalPart %= 0.10;
-		coins = (int) (decimalPart / 0.05);
-		System.out.printf("%d moeda(s) de R$ 0.05%n", coins);
-		decimalPart %= 0.05;
-		coins = (int) (decimalPart / 0.01);
-		System.out.printf("%d moeda(s) de R$ 0.01%n", coins);
+		int cem = 0;
+		int cinq = 0;
+		int vinte = 0;
+		int dez = 0;
+		int cinco = 0;
+		int dois = 0;
+
+		int um = 0;
+		int cinqCent = 0;
+		int vinteeCinco = 0;
+		int dezCent = 0;
+		int cincoCent = 0;
+		int umCent = 0;
+
+		if (value >= 100) {
+			cem = (int) (value / 100);
+			value %= 100;
+		}
+		if (value >= 50) {
+			cinq = (int) (value / 50);
+			value %= 50;
+		}
+		if (value >= 20) {
+			vinte = (int) (value / 20);
+			value %= 20;
+		}
+		if (value >= 10) {
+			dez = (int) (value / 10);
+			value %= 10;
+		}
+		if (value >= 5) {
+			cinco = (int) (value / 5);
+			value %= 5;
+		}
+		if (value >= 2) {
+			dois = (int) (value / 2);
+			value %= 2;
+		}
+		if (value >= 1) {
+			um = (int) (value / 1);
+			value %= 1;
+		}
+		if (value >= 0.5) {
+			cinqCent = (int) (value / 0.5);
+			value %= 0.5;
+		}
+		if (value >= 0.25) {
+			vinteeCinco = (int) (value / 0.25);
+			value %= 0.25;
+		}
+		if (value >= 0.10) {
+			dezCent = (int) (value / 0.10);
+			value %= 0.10;
+		}
+		if (value >= 0.05) {
+			cincoCent = (int) (value / 0.05);
+			value %= 0.05;
+		}
+		if (value >= 0.01) {
+			umCent = (int) (value / 0.01);
+			value %= 0.01;
+		}
+
+		System.out.printf(
+				"NOTAS:%n%d nota(s) de R$ 100.00%n%d nota(s) de R$ 50.00%n%d nota(s) de R$ 20.00%n%d nota(s) de R$ 10.00%n%d nota(s) de R$ 5.00%n%d nota(s) de R$ 2.00%nMOEDAS:%n%d moeda(s) de R$ 1.00%n%d moeda(s) de R$ 0.50%n%d moeda(s) de R$ 0.25%n%d moeda(s) de R$ 0.10%n%d moeda(s) de R$ 0.05%n%d moeda(s) de R$ 0.01",
+				cem, cinq, vinte, dez, cinco, dois, um, cinqCent, vinteeCinco, dezCent, cincoCent, umCent);
+
 		sc.close();
+
 	}
 }
