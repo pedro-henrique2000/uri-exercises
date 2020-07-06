@@ -10,18 +10,18 @@ public class Uri1116 {
 		Scanner sc = new Scanner(System.in);
 		DecimalFormat format = new DecimalFormat("0.0");
 		int number = sc.nextInt();
-		int a = sc.nextInt();
-		int b = sc.nextInt();
+		int a = 0;
+		int b = 0;
 
-		for (int i = 0; i < number; i++) {
+		for (int i = 0; i <= number; i++) {
+			a = sc.nextInt();
+			b = sc.nextInt();
 			if (b == 0)
 				System.out.println("divisao impossivel");
 			else {
-				double result = (double)a / b;
+				double result = (double) a / b;
 				System.out.println(format.format(result));
 			}
-			a = sc.nextInt();
-			b = sc.nextInt();
 		}
 
 		sc.close();

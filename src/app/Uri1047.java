@@ -20,16 +20,20 @@ public class Uri1047 {
 
 		if (totalMinute < 0) {
 			totalHour--;
-			totalMinute = 60 + (minuteB - minuteA);
-		}
-		if (totalHour == 0 && totalMinute == 0) {
-			totalHour = 24;
+			totalMinute += 60;
 		}
 		if (totalHour < 0) {
-			totalHour = 24 + (hourB - hourA);
+			totalHour += 24;
+		}
+		if (totalHour == 24 && totalMinute > 0) {
+			totalHour--;
 		}
 
-		System.out.printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)%n", totalHour, totalMinute);
+		if (totalHour == 0 && totalMinute == 0) {
+			System.out.println("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)");
+		} else {
+			System.out.printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)%n", totalHour, totalMinute);
+		}
 
 	}
 
