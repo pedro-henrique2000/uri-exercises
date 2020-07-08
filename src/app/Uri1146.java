@@ -7,16 +7,17 @@ public class Uri1146 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		int x = sc.nextInt();
 
-		while (x != 0) {
-			for (int i = 1; i <= x; i++) {
-				System.out.print(i);
-				if (i != x)
-					System.out.print(" ");
+		while (true) {
+			int x = sc.nextInt();
+			if (x == 0)
+				break;
+			System.out.print("1");
+
+			for (int i = 2; i <= x; i++) {
+				System.out.print(" " + i);
 			}
 			System.out.println();
-			x = sc.nextInt();
 		}
 
 		sc.close();
