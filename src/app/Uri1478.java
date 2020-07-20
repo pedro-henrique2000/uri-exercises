@@ -2,29 +2,33 @@ package app;
 
 import java.util.Scanner;
 
-public class Uri1435 {
+public class Uri1478 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int size = sc.nextInt();
-		int x = 1;
+		int x = 0;
 
 		while (size > 0) {
 			int[][] array = new int[size][size];
 			for (int i = 0; i < array.length; i++) {
+				x = i + 1;
+				int count = 0;
 				for (int j = 0; array[i].length > j; j++) {
-					x = i + 1;
-					if(j < x) {
-						x = j + 1;
+
+					if (array[i][0] == 1) {
+						x++;
+					} else if (j > 0) {
+						if (array[i][j - 1] > 1 && count == 0) {
+							x--;
+							if (x == 1) {
+								count++;
+							}
+						} else {
+							x++;
+						}
 					}
-					if(size - j < x) {
-						x = size - j ;
-					}
-					if(size - i < x) {
-						x = size - i ;
-					}
-					
 
 					array[i][j] = x;
 				}
