@@ -26,6 +26,8 @@ public class Uri1189 {
 		}
 
 		System.out.printf("%.1f%n", (op.equalsIgnoreCase("s") ? total : total / 30));
+		
+		sc.close();
 
 	}
 
